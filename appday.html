@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="fade">
+<!-- 
+  ^ You can control a few things with the <html> element's classes:
+
+  "fade"      - smooth fade between slides
+  "nonumbers" - remove the slide numbering after the progress bar
+-->
+
+<head>
+  <title>Making HTML5 work with Firefox OS  - Chris Heilmann - AppDays</title>
+  <!-- 
+    ^ Don't forget a good title - they show up as bookmarks and in Google 
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+  <style type="text/css">
+    /* Add your own styles here */
+    .talkdescription {
+      font-size: 12px;
+      color: #fff;
+      width: 80%;
+    }
+    .full .talkdescription {
+      display: none;
+    }
+    .slide blockquote.lots {
+      font-size: 30px;
+    }
+    .demourl { 
+      bottom: 20px;
+    }
+    .quotesource::before {
+      content: '~';
+    }
+    #reveal {
+      float: right;
+      margin: 20px 0 0 20px;
+      background: #fff;
+      position: relative;
+    }
+    #reveal img {
+      width: 200px;
+      z-index: 5;
+      display: block;
+      opacity: 0.5;
+      -webkit-transition: 2s;
+      -moz-transition: 2s;
+      -o-transition: 2s;
+      transition: 2s;
+    }
+    #reveal:hover img {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="list">
+
+  <header class="caption">
+    <h1>Making HTML5 work with Firefox OS</h1>
+    <p class="footer">Chris Heilmann, <a href="http://twitter.com/codepo8">@codepo8</a></p>
+  </header>
+  <aside class="talkdescription">
+    <p>This slide deck is using the shower system - roll over the previews to see the notes and click any slide to go into presentation mode. Then use keys to navigate.</p>
+  </aside>
+
+<!-- 
+  The following is a slide, it needs a class of "slide" and it doesn't 
+  hurt to keep the right semantic elements in there, too.
+  IMPORTANT: each slide needs its own unique ID - this will become its
+  URL and this is how this slide system works!
+-->
+
+  <div id="cover" class="slide"><div>
+    <section>
+      <header>
+        <h2>Making HTML5 work with Firefox OS</h2>
+      </header>
+      <img src="pictures/appdays/firefox-phone.png" alt="firefox phone" class="middle">
+      <small class="byline" style="color:#000;padding-right: 50px;">
+        Chris Heilmann, Mozilla, AppDays 2013, Berlin, Germany, 02/02/2013 
+      </small>
+    <footer class="notes"> 
+      Today we are going to talk about Firefox OS and how it will make HTML5 live up to the hype that's been made around it. 
+    </footer>
+    </section>
+  </div></div>
+
+
+  <div id="beyondthehype" class="slide"><div>
+    <section>
+      <header>
+        <h2>HTML5 beyond the hype&hellip;</h2>
+      </header>
+      <img src="pictures/appdays/hypecycle.png" alt="Hype cycle" class="middle shadow">
+      <p class="demourl">
+        <a href="https://en.wikipedia.org/wiki/Hype_cycle">The hype cycle</a>
+      </p>      
+    <footer class="notes">
+      Every technology out there goes through the hype cycle. Everyone jumps onto it and wants to have impressive headlines which is why we inflate expectations. After a while we always realise that reality is not all rainbows and unicorns and the pendulum swings the other way. In the end we get to take the technology serious and see how it can be used productively. All of this is frustrating to techies but this is how marketing works. Just building something is not enough - you need to sell it, too.    
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="greatthings" class="slide"><div>
+    <section>
+      <header>
+        <h2>The great things about HTML5</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Promotion of HTML to an application platform</li>
+        <li>World-wide availability without waiting for hardware</li>
+        <li>Flexibility - give users what their environment can stomach</li>
+        <li>Simple development environment - just start writing</li>
+        <li>Simple deployment - put it on a server and you're done</li>
+      </ul>
+    <footer class="notes">
+      HTML5 has a lot of great aspects that make it a very interesting proposal for developers.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="spanners" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>The spanners in the works&hellip;</h2>
+      </header>
+      <img src="pictures/appdays/tile-wrong.jpg" alt="wrong tile">
+    <footer class="notes">
+      All of that said, of course there are some issues that hold HTML5 back.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="oldbrowsers" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>One size fits all?</h2>
+      </header>
+      <img src="pictures/appdays/devices.jpg" alt="lots of devices">
+    <footer class="notes">
+      One of the barriers of HTML5 is hand-made. For years we've been trying to chase the dream of building one thing and make it behave the same everywhere. Instead of embracing the idea that anything on the web can make workable and then enhanced to be more comfortable for better and newer environments, we tried to shoehorn everything new into an existing outdated infrastructure.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="inauguration" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Times change&hellip;</h2>
+      </header>
+      <img class="right" src="pictures/appdays/inauguration.jpg" alt="The Obama Family 2009 and 2013 - everyone reading on phones" height="550" style="margin-top:-100px;">
+    <footer class="notes">
+      The weird thing is that whilst we were clinging to the past rather than celebrating the web stack as the one and only platform flexible enough to support all the environments the web can be consumed in the world around us changed. The mobile revolution is here.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="hypnophone" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>All hail the hypnophone&hellip;</h2>
+      </header>
+      <img src="pictures/appdays/hypnophone.jpg" alt="people reading on their phones">
+    <footer class="notes">
+      I could bore you now with numbers and projections showing that more and more mobile devices are being sold. That's neither here nor there for us as developers as all of those are fleeting and can change in months. The thing we have to worry about though is that the mobile platform as it is now is not as open to web technologies as it was heralded when people declared Flash dead.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="hardware" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Limited access to hardware</h2>
+      </header>
+      <figure class="middle frame shadow"><img src="pictures/appdays/the-clamps.jpg" alt="clamped wheel"></figure>
+      <small class="credits">
+        <a href="http://www.flickr.com/photos/liberato/2303576749/">
+          Photo by Ricardo Liberato
+        </a>
+      </small>      
+    <footer class="notes">
+      Fact is that we don't get access to all the hardware parts that make a smartphone interesting. In order to do that we need to package our HTML5 apps in a native wrapper and the performance of these wrappers is worse than those of the browser on these platforms. This lock-out is holding HTML5 back.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="market" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Lack of a "native" distribution platform</h2>
+      </header>
+      <img src="pictures/appdays/cornershop.jpg" alt="Corner shop">
+      <small class="credits">
+        <a href="http://www.flickr.com/photos/markjsebastian/4142995152/">Photo by Mark Sebastian</a>
+      </small>
+    <footer class="notes">
+      The next issue HTML5 has to face is one of perception. The closed platforms have users conditioned that apps can be found in app stores and that it is easy to pay for them there and get upgrades from there. Regardless of what we might be thinking about these stores, people want them - right now.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="mimick" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Failed mimicking attempts</h2>
+      </header>
+      <img src="pictures/appdays/horse-shoes.jpg" alt="cow shoes as worn by moonshiners during the prohibition">
+    <footer class="notes">
+      Some of the failed attempts at selling HTML5 as an app platform are based on the approach we took. A lot of it is simulating what native platforms do rather than taking advantage of what the web can bring to the equation.
+
+      (Explanation of the picture: during the prohibition in the US moonshiners - people brewing alcohol illegaly - wore these shoes so their tracks look like cow tracks)
+    </footer>
+    </section>
+  </div></div>
+
+
+  <div id="html5isdead" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Woe is us! HTML5 is dead!</h2>
+      </header>
+      <img src="pictures/appdays/interview-with-a-vampire.jpg" alt="Zuckerberg at TechCrunch Disrupt">
+    <footer class="notes">
+      At TechCrunch Disrupt Mark Zuckerberg was interviewed and in the immediate coverage by the tech press quoted as saying that HTML5 was a big mistake.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="quotingsucks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Quoting is hard&hellip;</h2>
+      </header>
+      <blockquote class="lots">
+        <p>I think that the biggest mistake that we made as a company was betting too much on HTML5 as opposed to native, because it just wasn't there.</p>
+        <p class="quotesource">Mark Zuckerberg (of sorts)</p>
+      </blockquote>
+    <footer class="notes">
+      The quote went like this. 
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="quotingsucks2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Success is irrelevant?</h2>
+      </header>
+      <blockquote class="lots">
+        It's not that HTML5 is bad. I'm actually long-term really excited about it. And one of the things that's interesting is <mark>we have actually more people on a daily basis using mobile web Facebook that we have using our iOS or Android apps combined</mark>. So mobile web is a big thing for us.
+      </blockquote>
+    <footer class="notes">
+      What was failed to mention were the interesting bits.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="quotingsucks3" class="slide"><div>
+    <section>
+      <header>
+        <h2>Shooting the HTML5 messenger&hellip;</h2>
+      </header>
+      <blockquote class="lots">
+        But there's no doubt that, we went for this approach, <mark>we built this internal framework that we called Faceweb</mark>, which is basically this idea that we can take the infrastructure that we built out for pushing code everyday, not having to submit to an app store, building web code on the web stack that we have, and that we can translate that into mobile development. <mark>We just were never able to get the quality of it we wanted</mark>&hellip;
+      </blockquote>
+    <footer class="notes">
+      It seems the main failure was Facebook's approach and internal system creating HTML5 apps - not the technology itself.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="fastbook" class="slide"><div>
+    <section>
+      <header>
+        <h2>Sencha delivers: Fastbook</h2>
+      </header>
+      <figure class="middle frame shadow">
+        <img src="pictures/appdays/fastbook-hero.png" 
+             width="500px" alt="Fastbook">
+
+      </figure>
+             <p class="demourl"><a href="http://www.sencha.com/blog/the-making-of-fastbook-an-html5-love-story/">Making of Fastbook</a> - <a href="http://fb.html5isready.com/">Fastbook</a></p>
+    <footer class="notes">
+      Sencha was so ticked off by this announcement that they built a proof of concept called Fastbook which delivers the same performance in HTML5 that the native iOS app has. Regardless of the academic nature of this we learned a lot of how to optimise our HTML5 solutions to make them work much faster.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="gettingreal" class="slide"><div>
+    <section>
+      <header>
+        <h2>What HTML5 needs is a flagship platform</h2>
+      </header>
+        <img src="pictures/appdays/flagship.png" 
+             height="450px" alt="Flagship" class="middle">
+    <footer class="notes">
+      HTML5 needs a platform that brings its best features to hardware without a conversion step in between. Right now it is treated as a second class citizen where its benefits could make app development much quicker and cheaper.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="ffos" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Firefox OS - we're on it!</h2>
+      </header>
+        <img src="pictures/mozillaoverview/otoro.jpg" alt="Firefox OS">
+      <footer class="notes">
+        This is where Mozilla is right now going full force to bring a change to that dilemma. Firefox OS is the first truly open operating system for mobile devices. 
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="webapis" class="slide"><div>
+    <section>
+      <header>
+        <h2>Truly opening up phones</h2>
+      </header>
+      <img src="pictures/appdays/hardware-blowup.png" 
+           alt="Hardware blowup" 
+           class="middle shadow">
+      <p class="demourl">
+        <a href="http://arewemobileyet.com">http://arewemobileyet.com</a>
+      </p>      
+      <footer class="notes">
+        Underneath the hood of Firefox OS are the web APIs - open source drivers with JavaScript interfaces to access all the hardware of the phone.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="devtools" class="slide"><div>
+    <section>
+      <header>
+        <h2>Developer tools</h2>
+      </header>
+      <img src="pictures/appdays/devtools.jpg" 
+           alt="Firefox devtools" 
+           height="460" 
+           class="middle shadow">
+    <footer class="notes">
+      In-browser developer tools are a step towards a pure HTML5 world. You can simulate different screen sizes in the browser and get debugging information whilst you develop. You can build your app 99% that way and just use the phone to do performance testing.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="buildingblocks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Building blocks in the browser</h2>
+      </header>
+      <img src="pictures/appdays/xtags.png" 
+           alt="X-tags examples" 
+           class="middle shadow">
+      <p class="demourl">
+        <a href="https://github.com/mozilla/mortar">Mortar</a> - <a href="https://github.com/Jaxo/fxosstub">fxos-stub</a> - 
+        <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Components</a> - 
+        <a href="https://wiki.mozilla.org/Apps/x-tag">X-Tag</a>
+      </p>
+      <footer class="notes">
+        Another big thing I am very excited about are web components, which define the missing app widgets we need, X-Tag which makes those available cross-browser and the Mortar and Webgame stub systems. Both of those allow any developer to start an app or game from building blocks and with a deployment script that uses GitHub as the host. They even create the offline and app manifests for you. Watch out for that.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="simulator" class="slide"><div>
+    <section>
+      <header>
+        <h2>Simulator in the browser</h2>
+      </header>
+      <img src="pictures/appdays/firefoxossimulator.png" 
+           alt="Simulator" 
+           height="400"
+           class="middle shadow">
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2012/12/firefox-os-simulator-1-0-is-here/">Firefox OS Simulator 1.0 is here!</a>
+      </p>
+      <footer class="notes">
+        Whilst waiting for the phones with Firefox OS to be available, you can start with the simulator, right in the browser. Just add the extension to Firefox and you are done.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="android" class="slide"><div>
+    <section>
+      <header>
+        <h2>Also works on Android</h2>
+      </header>
+      <figure class="middle shadow swing frame"><img src="pictures/appdays/foxkeh-android.png" 
+           alt="Foxkeh loves android" 
+           ></figure>
+      <footer class="notes">
+        Apps built for Firefox OS also run on Android devices with Firefox installed, which means you can test your apps on your own phone easily.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="marketplace" class="slide"><div>
+    <section>
+      <header>
+        <h2>To market, to market&hellip;</h2>
+      </header>
+      <figure class="middle shadow frame">
+      <img src="pictures/appdays/firefoxmarketplace.jpg" 
+           alt="Firefox marketplace" 
+           height="400">
+      </figure>     
+      <p class="demourl">
+        <a href="https://marketplace.firefox.com/">Firefox Marketplace</a>
+      </p>
+      <footer class="notes">
+        Firefox OS will have a marketplace, of course, as this is what people expect. You can publish your apps to this market right now and will get listed once we reviewed the apps.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="everything" class="slide"><div>
+    <section>
+      <header>
+        <h2>Taking markets to the web&hellip;</h2>
+      </header>
+      <img src="pictures/appdays/everythingme.jpg" 
+           alt="The search interface of Firefox OS" 
+           height="450"
+           class="middle">
+      <footer class="notes">
+        Having a market is only the first step though. The search interface on the Firefox OS phone does not only group your apps for you - it is also a discovery interface for apps on the web. Where app markets were the Yahoo Directory for finding apps this is the Google. Imagine using the success of any web site to promote its app and vice versa. This is coming.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="hereandnow" class="slide"><div>
+    <section>
+      <header>
+        <h2>The time is now, the place is here&hellip;</h2>
+      </header>
+      <figure class="middle shadow frame">
+      <img src="pictures/appdays/today-is-the-tomorrow-you-expected-yesterday.jpg" alt="Today is the tomorrow you expected yesterday"></figure>
+      <p class="demourl">
+        <a href="http://www.thelostthing.com/">Shaun Tan: the lost thing</a>
+      </p>      
+    <footer class="notes">
+      If you ever wanted to build your first HTML5 app and tyou were disappointed with what platforms give you now, here is your chance to have your first go for Firefox OS. 
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="whattodo" class="slide"><div>
+    <section>
+      <header>
+        <h2>Off you go, make awesome!</h2>
+      </header>
+      <img src="pictures/appdays/comfort-zone-and-magic.jpg" alt="outside your comfort zone is where the magic happens" width="500" class="middle shadow">
+    <footer class="notes">
+      If you already built apps before and want to play in an environment that treats HTML5 as a first class citizen, here is your chance. Go wild. Do new things. The web and HTML5 can beat native any day if we play it to its strengths rather than simulating native.
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="thanks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Thanks</h2>
+      </header>
+        <figure class="frame middle swing">
+        <img src="pictures/appdays/thats-all-fox.jpg"
+             width="600" 
+             alt="that's all firefox">
+        </figure>
+      <ul class="oneline demourl">
+        <li>Chris Heilmann</li>
+        <li><a href="http://twitter.com/codepo8">@codepo8</a></li>
+        <li><a href="http://icant.co.uk/talks/h5/appdays.html">
+          http://icant.co.uk/talks/h5/appdays.html
+        </a></li>
+      </ul>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div class="progress"><div></div></div>
+  <!-- 
+    ^ don't like a progress bar? just delete this DIV
+  -->
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
